@@ -14,15 +14,12 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var comPlayerLevel: UISegmentedControl!
     
-    @IBOutlet weak var redBox: UILabel!
-    @IBOutlet weak var blackBox: UILabel!
-    var redChip : Chip!
-    var blackChip : Chip!
-    var chipStr = ["r", "b"]
+    @IBOutlet weak var chipBox: UILabel!
     
-    @IBOutlet weak var redTurnArrow: UIImageView!
-    @IBOutlet weak var blackTurnArrow: UIImageView!
-    var fadedAlpha = CGFloat(0.2)
+    var currentChip : Chip?
+    var currentChipIsMovable = false
+    
+    var chipStr = ["r", "b"]
     
     @IBOutlet weak var cell1A: Cell!
     @IBOutlet weak var cell2A: Cell!
@@ -74,7 +71,6 @@ class ThirdViewController: UIViewController {
     
     @IBOutlet var dragField: UIPanGestureRecognizer!
     
-    var movable : Chip?
     var board = [[Cell]]()
     
     var redTurn = true
@@ -93,22 +89,14 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        board.append([cell1A, cell2A, cell3A, cell4A, cell5A, cell6A, cell7A])
-        board.append([cell1B, cell2B, cell3B, cell4B, cell5B, cell6B, cell7B])
-        board.append([cell1C, cell2C, cell3C, cell4C, cell5C, cell6C, cell7C])
-        board.append([cell1D, cell2D, cell3D, cell4D, cell5D, cell6D, cell7D])
-        board.append([cell1E, cell2E, cell3E, cell4E, cell5E, cell6E, cell7E])
         board.append([cell1F, cell2F, cell3F, cell4F, cell5F, cell6F, cell7F])
+        board.append([cell1E, cell2E, cell3E, cell4E, cell5E, cell6E, cell7E])
+        board.append([cell1D, cell2D, cell3D, cell4D, cell5D, cell6D, cell7D])
+        board.append([cell1C, cell2C, cell3C, cell4C, cell5C, cell6C, cell7C])
+        board.append([cell1B, cell2B, cell3B, cell4B, cell5B, cell6B, cell7B])
+        board.append([cell1A, cell2A, cell3A, cell4A, cell5A, cell6A, cell7A])
         
-        redTurn = true
-        redChip = createNewChip(place: redBox.center, color: chipStr[0])
-        blackChip = createNewChip(place: blackBox.center, color: chipStr[1])
-        
-        blackTurnArrow.alpha = fadedAlpha
-        redTurnArrow.alpha = 1.0
-        
-        blackChip.alpha = fadedAlpha
-        redChip.alpha = 1.0
+        updatePlayerTurn(isRed: true)
         
         for row in board {
             for cell in row {
@@ -125,14 +113,13 @@ class ThirdViewController: UIViewController {
     //==================================================
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let first = touches.first?.location(in: background)
-        movable = nil
         
-        let chipToMove : Chip!
-        if redTurn { chipToMove = redChip }
-        else { chipToMove = blackChip }
-
-        if chipToMove.frame.contains(first!) && chipToMove.canMove {
-            movable = chipToMove
+        currentChipIsMovable = false
+        
+        if currentChip != nil {
+            if (currentChip!.frame.contains(first!)) && (currentChip!.canMove) {
+                currentChipIsMovable = true
+            }
         }
 
     }
@@ -143,23 +130,25 @@ class ThirdViewController: UIViewController {
     //==================================================
     @IBAction func onDragged(_ sender: UIPanGestureRecognizer) {
         let point = dragField.location(in: background)
-        movable?.center = CGPoint(x: point.x, y: point.y)
         
-        var landedOnDropLabel = false
-        if dragField.state == UIGestureRecognizerState.ended && movable != nil {
-            for label in dropLabels {
-                if label.frame.contains(movable!.center) {
-                    if fallDown(col: label.tag, makeMove: true) >= 0 {
-                        landedOnDropLabel = true
-                    }
-                    break
-                }
-            }
+        if currentChipIsMovable {
+            currentChip?.center = CGPoint(x: point.x, y: point.y)
             
-            if !landedOnDropLabel {
-                // send 'em back!
-                if redTurn { movable!.center = redBox.center }
-                else { movable!.center = blackBox.center }
+            var landedOnDropLabel = false
+            if dragField.state == UIGestureRecognizerState.ended && currentChip != nil {
+                for label in dropLabels {
+                    if label.frame.contains(currentChip!.center) {
+                        if fallDown(col: label.tag, makeMove: true) >= 0 {
+                            landedOnDropLabel = true
+                        }
+                        break
+                    }
+                }
+                
+                if !landedOnDropLabel {
+                    // send 'em back!
+                    currentChip!.center = chipBox.center }
+                }
             }
         }
     }
@@ -171,17 +160,18 @@ class ThirdViewController: UIViewController {
     //==================================================
     func fallDown(col: Int, makeMove: Bool) -> Int {
         
-        for checkMe in 0...5 {
+        for checkMe in 0..<board.count {
             let cell = board[checkMe][col]
             if cell.isEmpty {
-                if makeMove && movable != nil {
+                if makeMove && currentChip != nil {
                     if !redTurn && comPlayerLevel.selectedSegmentIndex > 0 {
                         animateToDrop(dropIndex: col, toCell: cell)
                     } else { animateDownwards(toCell: cell) }
                 
-                    movable!.canMove = false
+                    currentChip!.canMove = false
                     cell.isEmpty = false
-                    cell.chipReference = movable
+                    cell.chipReference = currentChip
+                    currentChip = nil
                 }
                 return checkMe
             }
@@ -194,18 +184,18 @@ class ThirdViewController: UIViewController {
     // arrow to the open cell
     //==================================================
     func animateDownwards(toCell: Cell) {
-        movable?.center.x = toCell.center.x
+        currentChip?.center.x = toCell.center.x
         UIView.animate(withDuration: 0.4, animations: {
-            self.movable?.center.y = toCell.center.y
+            self.currentChip?.center.y = toCell.center.y
             }, completion: { finished in
                 
                 // NOW CHECK FOR A WINNER
                 let rank = self.determineRank()
                 
                 if rank == 1000000 {
-                    self.presentWinAlert("Winner: RED")
+                    self.presentWinAlert("Red Wins!")
                 } else if rank == -1000000 {
-                    self.presentWinAlert("Winner: BLACK")
+                    self.presentWinAlert("Black Wins!")
                 } else if self.checkForStalemate() {
                     self.presentWinAlert("Tie")
                 } else {
@@ -237,19 +227,9 @@ class ThirdViewController: UIViewController {
         redTurn = isRed
         
         if redTurn {
-            blackTurnArrow.alpha = self.fadedAlpha
-            redTurnArrow.alpha = 1.0
-            
-            blackChip = createNewChip(place: blackBox.center, color: chipStr[1])
-            blackChip.alpha = self.fadedAlpha
-            redChip.alpha = 1.0
+            currentChip = createNewChip(place: chipBox.center, color: chipStr[0])
         } else {
-            redTurnArrow.alpha = self.fadedAlpha
-            blackTurnArrow.alpha = 1.0
-            
-            redChip = createNewChip(place: redBox.center, color: chipStr[0])
-            redChip.alpha = self.fadedAlpha
-            blackChip.alpha = 1.0
+            currentChip = createNewChip(place: chipBox.center, color: chipStr[1])
         }
     }
     
@@ -265,10 +245,11 @@ class ThirdViewController: UIViewController {
             }
         }
         
-        blackChip?.removeFromSuperview()
-        redChip?.removeFromSuperview()
-        self.viewDidLoad()
+        currentChip?.removeFromSuperview()
+        updatePlayerTurn(isRed: true)
+        //self.viewDidLoad()
     }
+
     // THE FOLLOWING DEALS WITH WINNING
     
     //==================================================
@@ -409,7 +390,7 @@ class ThirdViewController: UIViewController {
     //==================================================
     func comPlayer() {
         
-        movable = blackChip
+        //movable = currentChip // black chip
         
         if comPlayerLevel.selectedSegmentIndex > 1 {
             // LEVEL ONE/TWO: Based on the board evaluation
@@ -430,7 +411,7 @@ class ThirdViewController: UIViewController {
     //==================================================
     func animateToDrop(dropIndex: Int, toCell: Cell) {
         UIView.animate(withDuration: 0.5, animations: {
-            self.movable?.center = self.dropLabels[dropIndex].center
+            self.currentChip?.center = self.dropLabels[dropIndex].center
             }, completion: { finished in
                 self.animateDownwards(toCell: toCell)
         })

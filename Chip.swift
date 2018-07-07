@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Chip: UILabel { //UIImageView {
+class Chip: UILabel {
     var canMove = true
     var colorStr = ""
     
