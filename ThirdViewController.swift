@@ -116,7 +116,7 @@ class ThirdViewController: UIViewController {
         
         currentChipIsMovable = false
         
-        if currentChip != nil {
+        if ((comPlayerLevel.selectedSegmentIndex > 0 && redTurn) || comPlayerLevel.selectedSegmentIndex == 0) && currentChip != nil {
             if (currentChip!.frame.contains(first!)) && (currentChip!.canMove) {
                 currentChipIsMovable = true
             }
@@ -147,7 +147,7 @@ class ThirdViewController: UIViewController {
                 
                 if !landedOnDropLabel {
                     // send 'em back!
-                    currentChip!.center = chipBox.center }
+                    currentChip!.center = chipBox.center
                 }
             }
         }
@@ -171,7 +171,6 @@ class ThirdViewController: UIViewController {
                     currentChip!.canMove = false
                     cell.isEmpty = false
                     cell.chipReference = currentChip
-                    currentChip = nil
                 }
                 return checkMe
             }

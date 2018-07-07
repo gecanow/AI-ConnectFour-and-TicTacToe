@@ -234,12 +234,18 @@
                                     <segment title="AI: Level 3"/>
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="reset:" destination="7Gx-en-Oql" eventType="valueChanged" id="vUX-bA-rme"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIr-dm-4Kt">
                                 <rect key="frame" x="164" y="114" width="46" height="30"/>
                                 <state key="normal" title="RESET">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="reset:" destination="7Gx-en-Oql" eventType="touchUpInside" id="Mfn-nE-m7Q"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sO1-pb-XXQ">
                                 <rect key="frame" x="23" y="152" width="328" height="445"/>
