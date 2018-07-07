@@ -75,14 +75,7 @@ class ThirdViewController: UIViewController {
     @IBOutlet var dragField: UIPanGestureRecognizer!
     
     var movable : Chip?
-    var board : [[Cell]]!
-
-    var rowOne: [Cell]!
-    var rowTwo: [Cell]!
-    var rowThree: [Cell]!
-    var rowFour: [Cell]!
-    var rowFive: [Cell]!
-    var rowSix: [Cell]!
+    var board = [[Cell]]()
     
     var redTurn = true
     
@@ -100,14 +93,12 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rowOne =   [cell1A, cell2A, cell3A, cell4A, cell5A, cell6A, cell7A]
-        rowTwo =   [cell1B, cell2B, cell3B, cell4B, cell5B, cell6B, cell7B]
-        rowThree = [cell1C, cell2C, cell3C, cell4C, cell5C, cell6C, cell7C]
-        rowFour =  [cell1D, cell2D, cell3D, cell4D, cell5D, cell6D, cell7D]
-        rowFive =  [cell1E, cell2E, cell3E, cell4E, cell5E, cell6E, cell7E]
-        rowSix =   [cell1F, cell2F, cell3F, cell4F, cell5F, cell6F, cell7F]
-        
-        board = [rowSix, rowFive, rowFour, rowThree, rowTwo, rowOne]
+        board.append([cell1A, cell2A, cell3A, cell4A, cell5A, cell6A, cell7A])
+        board.append([cell1B, cell2B, cell3B, cell4B, cell5B, cell6B, cell7B])
+        board.append([cell1C, cell2C, cell3C, cell4C, cell5C, cell6C, cell7C])
+        board.append([cell1D, cell2D, cell3D, cell4D, cell5D, cell6D, cell7D])
+        board.append([cell1E, cell2E, cell3E, cell4E, cell5E, cell6E, cell7E])
+        board.append([cell1F, cell2F, cell3F, cell4F, cell5F, cell6F, cell7F])
         
         redTurn = true
         redChip = createNewChip(place: redBox.center, color: chipStr[0])
@@ -232,23 +223,9 @@ class ThirdViewController: UIViewController {
     // specified place (redBox or blackBox)
     //==================================================
     func createNewChip(place: CGPoint, color: String) -> Chip {
-        let newChip = Chip()
-        newChip.frame.size = CGSize(width: 40, height: 40)
-        newChip.center = place
-        newChip.clipsToBounds = true
-        newChip.layer.cornerRadius = 20
-        if color == "r" {
-            newChip.backgroundColor = .red
-        } else {
-            newChip.backgroundColor = .black
-        }
+        let newChip = Chip(center: place, color: color)
         background.addSubview(newChip)
-        background.bringSubview(toFront: newChip)
-        
         background.sendSubview(toBack: newChip)
-        
-        newChip.colorStr = color
-        
         return newChip
     }
     
@@ -274,7 +251,6 @@ class ThirdViewController: UIViewController {
             redChip.alpha = self.fadedAlpha
             blackChip.alpha = 1.0
         }
-        
     }
     
     //==================================================
@@ -344,7 +320,7 @@ class ThirdViewController: UIViewController {
     func presentWinAlert(_ winner: String) {
         let alert = UIAlertController(title: winner, message: nil,preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Reset", style: .default) {
-            (action) -> Void in self.reset(sender: self)
+            (action) -> Void in self.reset(self)
         }
         alert.addAction(alertAction)
         present(alert, animated: true, completion: nil)
@@ -417,10 +393,10 @@ class ThirdViewController: UIViewController {
         var range = main.range(of: lookUp) //main.rangeOfString(lookUp)
         var ctr = 0
         
-        while range != nil { //String(range) != "nil"
+        while range != nil {
             ctr += 1
-            main = String(main.substring(from: (range?.upperBound)!)) //String(main.substringFromIndex(range!.endIndex))
-            range = main.range(of: lookUp) //main.rangeOfString(lookUp)
+            main = String(main[range!.upperBound...])
+            range = main.range(of: lookUp)
         }
         
         return ctr
@@ -438,7 +414,7 @@ class ThirdViewController: UIViewController {
         if comPlayerLevel.selectedSegmentIndex > 1 {
             // LEVEL ONE/TWO: Based on the board evaluation
             let nextStepIndex = bestNextMoveFor(color: "b", position: comPlayerLevel.selectedSegmentIndex - 1)[0]
-            fallDown(col: nextStepIndex, makeMove: true)
+            let _ = fallDown(col: nextStepIndex, makeMove: true)
         } else {
             // LEVEL ZERO: pick a random column
             var column : Int!

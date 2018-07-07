@@ -25,10 +25,133 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="galaxy" translatesAutoresizingMaskIntoConstraints="NO" id="9uT-hn-4bs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zf4-qY-h3S">
-                                <rect key="frame" x="21" y="86" width="333" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tic Tac Toe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4K-eq-4NU">
+                                <rect key="frame" x="16" y="28" width="343" height="48"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="41"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbo-SC-cw9">
+                                <rect key="frame" x="42" y="188" width="290" height="290"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f2p-fb-0L9">
+                                        <rect key="frame" x="89" y="0.0" width="10" height="290"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6U2-gF-Qfh">
+                                        <rect key="frame" x="190" y="0.0" width="10" height="290"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I8c-PK-DkX">
+                                        <rect key="frame" x="0.0" y="90" width="290" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgd-9F-j6R">
+                                        <rect key="frame" x="0.0" y="189" width="290" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVH-hN-6Qg" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
+                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwe-WH-Tfh" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="100" y="0.0" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
+                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF8-Ol-3Tv" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="200" y="0.0" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
+                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Die-AK-uDi" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="100" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
+                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei9-B1-9cr" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="100" y="100" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
+                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmv-bH-kX7" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="200" y="200" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
+                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2p7-ix-IZW" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="100" y="200" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
+                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgJ-RR-h4A" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="200" y="100" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
+                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gi8-jy-h64" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="200" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
+                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="Y2w-Bg-k5a"/>
+                                    <constraint firstAttribute="width" constant="290" id="Y8l-9b-xik"/>
+                                    <constraint firstAttribute="height" constant="290" id="lpe-Rj-fNc"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PSg-Qn-EBD" appends="YES" id="B8Z-4l-1Q1"/>
+                                </connections>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zf4-qY-h3S">
+                                <rect key="frame" x="32" y="84" width="311" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="XfF-hi-1a2"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="e5e-am-QBg"/>
                                 </constraints>
                                 <segments>
                                     <segment title="1 v 1"/>
@@ -41,147 +164,21 @@
                                     <action selector="reset:" destination="BYZ-38-t0r" eventType="valueChanged" id="33F-Sf-WBG"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbo-SC-cw9">
-                                <rect key="frame" x="62" y="208.5" width="250" height="250"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVH-hN-6Qg" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
-                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Die-AK-uDi" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
-                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei9-B1-9cr" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="88" y="88" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
-                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgJ-RR-h4A" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="175" y="88" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
-                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmv-bH-kX7" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="175" y="175" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
-                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF8-Ol-3Tv" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="175" y="0.0" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
-                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gi8-jy-h64" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="175" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
-                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwe-WH-Tfh" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="88" y="0.0" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
-                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f2p-fb-0L9">
-                                        <rect key="frame" x="74" y="0.0" width="14" height="250"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="7"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6U2-gF-Qfh">
-                                        <rect key="frame" x="162" y="0.0" width="14" height="250"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="7"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I8c-PK-DkX">
-                                        <rect key="frame" x="0.0" y="75" width="250" height="14"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="7"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgd-9F-j6R">
-                                        <rect key="frame" x="0.0" y="162" width="250" height="14"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="7"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2p7-ix-IZW" customClass="GridLabel" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="88" y="175" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="75"/>
-                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="DaE-Lx-LLD"/>
-                                    <constraint firstAttribute="width" constant="250" id="gvh-wI-6Jp"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="PSg-Qn-EBD" appends="YES" id="B8Z-4l-1Q1"/>
-                                </connections>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tic Tac Toe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4K-eq-4NU">
-                                <rect key="frame" x="16" y="28" width="343" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="TWN-T2-p2j"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="41"/>
-                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="zf4-qY-h3S" secondAttribute="trailing" constant="5" id="654-Gl-Xxj"/>
-                            <constraint firstItem="9uT-hn-4bs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="K6H-tv-jHU"/>
-                            <constraint firstItem="xbo-SC-cw9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LKc-wE-5QT"/>
-                            <constraint firstItem="A4K-eq-4NU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Sre-MA-Drv"/>
-                            <constraint firstItem="A4K-eq-4NU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="UL5-97-BuZ"/>
-                            <constraint firstItem="A4K-eq-4NU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eZD-s7-goN"/>
-                            <constraint firstItem="xbo-SC-cw9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fQj-3z-n1x"/>
-                            <constraint firstItem="zf4-qY-h3S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="mXy-ON-zMa"/>
-                            <constraint firstItem="zf4-qY-h3S" firstAttribute="top" secondItem="A4K-eq-4NU" secondAttribute="bottom" constant="8" id="nxT-Xa-qV1"/>
-                            <constraint firstItem="zf4-qY-h3S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qWw-cJ-7Z8"/>
-                            <constraint firstItem="9uT-hn-4bs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="s4Z-aC-coX"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9uT-hn-4bs" secondAttribute="bottom" id="waC-9Q-del"/>
-                            <constraint firstAttribute="trailing" secondItem="9uT-hn-4bs" secondAttribute="trailing" id="yNk-ed-c3G"/>
+                            <constraint firstItem="zf4-qY-h3S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="5V6-p4-9Sk"/>
+                            <constraint firstItem="9uT-hn-4bs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FVL-QM-EWb"/>
+                            <constraint firstAttribute="trailing" secondItem="9uT-hn-4bs" secondAttribute="trailing" id="GHl-2z-0IQ"/>
+                            <constraint firstItem="A4K-eq-4NU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="MPY-qe-cF1"/>
+                            <constraint firstItem="9uT-hn-4bs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MxW-Z3-pRs"/>
+                            <constraint firstItem="xbo-SC-cw9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ruv-qq-dCO"/>
+                            <constraint firstItem="xbo-SC-cw9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bM0-SR-B67"/>
+                            <constraint firstItem="zf4-qY-h3S" firstAttribute="top" secondItem="A4K-eq-4NU" secondAttribute="bottom" constant="8" symbolic="YES" id="pHd-xC-fRR"/>
+                            <constraint firstItem="9uT-hn-4bs" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="rdf-q7-AtU"/>
+                            <constraint firstItem="A4K-eq-4NU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="v10-4J-unL"/>
+                            <constraint firstItem="A4K-eq-4NU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xDt-cA-XD2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zf4-qY-h3S" secondAttribute="trailing" constant="16" id="yYQ-GT-xHx"/>
                         </constraints>
                     </view>
                     <connections>
@@ -205,7 +202,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1978" y="309"/>
+            <point key="canvasLocation" x="1976.8" y="308.9955022488756"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="jtw-dO-BYp">
@@ -244,6 +241,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sO1-pb-XXQ">
                                 <rect key="frame" x="23" y="202" width="328" height="445"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qeW-ub-wjp">
+                                        <rect key="frame" x="-5" y="150" width="339" height="295"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JT2-iw-eEQ" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="157" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -760,7 +766,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3329" y="309"/>
+            <point key="canvasLocation" x="3328.8000000000002" y="308.9955022488756"/>
         </scene>
         <!--Game Room-->
         <scene sceneID="BH4-qa-bED">
