@@ -262,7 +262,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOj-t8-wGu">
                                         <rect key="frame" x="139" y="0.0" width="50" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="rN7-58-6ck"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="rN7-58-6ck"/>
                                             <constraint firstAttribute="height" constant="50" id="y27-YP-oLc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
