@@ -96,8 +96,6 @@ class ThirdViewController: UIViewController {
         board.append([cell1B, cell2B, cell3B, cell4B, cell5B, cell6B, cell7B])
         board.append([cell1A, cell2A, cell3A, cell4A, cell5A, cell6A, cell7A])
         
-        updatePlayerTurn(isRed: true)
-        
         for row in board {
             for cell in row {
                 cell.layer.cornerRadius = 20
@@ -105,6 +103,7 @@ class ThirdViewController: UIViewController {
                 cell.backgroundColor = .clear
             }
         }
+        updatePlayerTurn(isRed: true)
     }
     
     //==================================================
@@ -230,6 +229,7 @@ class ThirdViewController: UIViewController {
         } else {
             currentChip = createNewChip(place: chipBox.center, color: chipStr[1])
         }
+        currentChipIsMovable = false
     }
     
     //==================================================
@@ -388,9 +388,6 @@ class ThirdViewController: UIViewController {
     // Handle's the computer player's move
     //==================================================
     func comPlayer() {
-        
-        //movable = currentChip // black chip
-        
         if comPlayerLevel.selectedSegmentIndex > 1 {
             // LEVEL ONE/TWO: Based on the board evaluation
             let nextStepIndex = bestNextMoveFor(color: "b", position: comPlayerLevel.selectedSegmentIndex - 1)[0]
