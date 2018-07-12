@@ -51,18 +51,19 @@ class ViewController: UIViewController {
                 else { myLabel.text = "O" }
                 myLabel.canTap = false
                 
-                if !gameIsOver() && GameInfo.numPlayers == 1 {
-                    Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.comPlayer), userInfo: nil, repeats: false)
-                } else { xTurn = !xTurn }
+                if !checkForWinner() {
+                    if !gameIsOver() && GameInfo.numPlayers == 1 {
+                        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:     #selector(ViewController.comPlayer), userInfo: nil, repeats: false)
+                    } else { xTurn = !xTurn }
+                }
             }
         }
-        checkForWinner()
     }
     
     //=============================================
     // Checks for a winner or a cat's game
     //=============================================
-    func checkForWinner() {
+    func checkForWinner() -> Bool {
         var winner = "Winner: "
         if checkCells(gl1: gridLabels[0], gl2: gridLabels[1], gl3: gridLabels[2]) {
             winner += gridLabels[0].text!
@@ -87,7 +88,9 @@ class ViewController: UIViewController {
         }
         if winner != "" {
             presentWinningAlert(winner)
+            return true
         }
+        return false
     }
     
     //=============================================

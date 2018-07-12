@@ -59,11 +59,11 @@ class MainViewController: UIViewController {
     
     func updateUI(onArr: [UIButton], selectedButton: UIButton) {
         for button in onArr {
-            button.setBackgroundImage(UIImage(named: "uptapped"), for: .normal)
+            button.setBackgroundImage(UIImage(named: "uptapped1"), for: .normal)
             button.setTitleColor(.white, for: .normal)
         }
         
-        selectedButton.setBackgroundImage(UIImage(named: "tapped"), for: .normal)
+        selectedButton.setBackgroundImage(UIImage(named: "tapped1"), for: .normal)
         selectedButton.setTitleColor(.black, for: .normal)
     }
 }

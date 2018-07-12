@@ -10,6 +10,8 @@ import UIKit
 
 class ThirdViewController: UIViewController {
     
+    @IBOutlet weak var iButton: UIButton!
+    @IBOutlet weak var information: UILabel!
     @IBOutlet var dropLabels: [UIImageView]!
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var boxOutline: UIView!
@@ -95,6 +97,7 @@ class ThirdViewController: UIViewController {
         board.append([cell1B, cell2B, cell3B, cell4B, cell5B, cell6B, cell7B])
         board.append([cell1A, cell2A, cell3A, cell4A, cell5A, cell6A, cell7A])
         
+        iButton.layer.borderColor = UIColor.white.cgColor
         boxOutline.layer.borderColor = UIColor.white.cgColor
         for row in board {
             for cell in row {
@@ -105,6 +108,10 @@ class ThirdViewController: UIViewController {
             }
         }
         updatePlayerTurn(isRed: true)
+    }
+    
+    @IBAction func onTappedi(_ sender: Any) {
+        information.isHidden = !information.isHidden
     }
     
     //==================================================

@@ -210,8 +210,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIr-dm-4Kt">
-                                <rect key="frame" x="164" y="120" width="46" height="32"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <rect key="frame" x="169" y="573" width="36" height="44"/>
+                                <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="28"/>
                                 <state key="normal" title="RESET">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -220,7 +220,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sO1-pb-XXQ">
-                                <rect key="frame" x="23" y="160" width="328" height="445"/>
+                                <rect key="frame" x="23" y="120" width="328" height="445"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JT2-iw-eEQ" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="157" width="40" height="40"/>
@@ -625,19 +625,52 @@
                                     <outletCollection property="gestureRecognizers" destination="tgv-pD-hDe" appends="YES" id="Ypt-3P-Ajh"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="611-o4-hnM">
+                                <rect key="frame" x="16" y="625" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="Iw6-Eo-0kr"/>
+                                    <constraint firstAttribute="height" constant="34" id="p1j-Oa-0NQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                <state key="normal" title="i">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onTappedi:" destination="7Gx-en-Oql" eventType="touchUpInside" id="rBv-dP-IzA"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag the chip to an arrow to drop it into a game board column. The first to line four chips in a row wins. " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKT-NA-OXb">
+                                <rect key="frame" x="58" y="612" width="301" height="47"/>
+                                <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="QIr-dm-4Kt" firstAttribute="top" secondItem="sO1-pb-XXQ" secondAttribute="bottom" constant="8" id="4u1-ST-GHC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="biW-cd-etA" secondAttribute="trailing" id="6MG-b1-ByB"/>
+                            <constraint firstItem="XKT-NA-OXb" firstAttribute="leading" secondItem="611-o4-hnM" secondAttribute="trailing" constant="8" id="Ff3-Qn-9NO"/>
                             <constraint firstItem="7uz-oE-fLR" firstAttribute="top" secondItem="nj2-wq-8yD" secondAttribute="bottom" id="IOA-rB-OuW"/>
                             <constraint firstItem="nj2-wq-8yD" firstAttribute="leading" secondItem="s4c-5C-vay" secondAttribute="leading" id="LCl-Jn-lPt"/>
                             <constraint firstItem="biW-cd-etA" firstAttribute="leading" secondItem="s4c-5C-vay" secondAttribute="leadingMargin" id="Rqz-H8-gRt"/>
                             <constraint firstAttribute="trailing" secondItem="nj2-wq-8yD" secondAttribute="trailing" id="TIh-mo-v5z"/>
-                            <constraint firstItem="sO1-pb-XXQ" firstAttribute="top" secondItem="QIr-dm-4Kt" secondAttribute="bottom" constant="8" id="TTJ-4s-5EH"/>
-                            <constraint firstItem="QIr-dm-4Kt" firstAttribute="centerX" secondItem="s4c-5C-vay" secondAttribute="centerX" id="aQf-Lx-npd"/>
+                            <constraint firstItem="XKT-NA-OXb" firstAttribute="trailing" secondItem="s4c-5C-vay" secondAttribute="trailingMargin" id="ckx-JE-TaS"/>
                             <constraint firstItem="nj2-wq-8yD" firstAttribute="top" secondItem="s4c-5C-vay" secondAttribute="top" id="dAc-xz-ntg"/>
+                            <constraint firstItem="7uz-oE-fLR" firstAttribute="top" secondItem="XKT-NA-OXb" secondAttribute="bottom" constant="8" id="hBl-j7-00p"/>
+                            <constraint firstItem="7uz-oE-fLR" firstAttribute="top" secondItem="611-o4-hnM" secondAttribute="bottom" constant="8" id="hrM-Rb-03g"/>
+                            <constraint firstItem="611-o4-hnM" firstAttribute="leading" secondItem="s4c-5C-vay" secondAttribute="leadingMargin" id="jfR-SW-qem"/>
+                            <constraint firstItem="sO1-pb-XXQ" firstAttribute="top" secondItem="biW-cd-etA" secondAttribute="bottom" constant="8" id="mSe-aS-lzp"/>
+                            <constraint firstItem="QIr-dm-4Kt" firstAttribute="centerX" secondItem="s4c-5C-vay" secondAttribute="centerX" id="phf-0h-r3E"/>
                             <constraint firstItem="sO1-pb-XXQ" firstAttribute="centerX" secondItem="s4c-5C-vay" secondAttribute="centerX" id="rdW-30-84Q"/>
                             <constraint firstItem="biW-cd-etA" firstAttribute="top" secondItem="6FJ-fc-MJa" secondAttribute="bottom" constant="8" id="rpa-bn-Edl"/>
-                            <constraint firstItem="QIr-dm-4Kt" firstAttribute="top" secondItem="biW-cd-etA" secondAttribute="bottom" constant="8" id="zFw-r8-Hfa"/>
                         </constraints>
                     </view>
                     <connections>
@@ -687,6 +720,8 @@
                         <outlet property="cell7F" destination="5AY-Na-6CQ" id="UHz-QY-OkG"/>
                         <outlet property="chipBox" destination="cOj-t8-wGu" id="w8z-Pu-SKk"/>
                         <outlet property="dragField" destination="tgv-pD-hDe" id="BGs-Gg-mgC"/>
+                        <outlet property="iButton" destination="611-o4-hnM" id="Jb3-X0-tpg"/>
+                        <outlet property="information" destination="XKT-NA-OXb" id="Quh-Oc-8yc"/>
                         <outletCollection property="dropLabels" destination="pwy-mn-Uws" collectionClass="NSMutableArray" id="w56-Ad-Hgt"/>
                         <outletCollection property="dropLabels" destination="I00-aD-rf9" collectionClass="NSMutableArray" id="oUT-LX-lfI"/>
                         <outletCollection property="dropLabels" destination="h3T-s3-HMt" collectionClass="NSMutableArray" id="v7a-OA-kEm"/>
@@ -703,7 +738,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3396" y="309"/>
+            <point key="canvasLocation" x="3396" y="308.9955022488756"/>
         </scene>
         <!--Game Room-->
         <scene sceneID="BH4-qa-bED">
@@ -747,7 +782,7 @@
                                             <constraint firstAttribute="height" constant="150" id="W1S-9W-bMk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="31"/>
-                                        <state key="normal" title="vs. Computer" backgroundImage="tapped">
+                                        <state key="normal" title="vs. Computer" backgroundImage="tapped1">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -761,7 +796,7 @@
                                             <constraint firstAttribute="height" constant="150" id="jYQ-8K-36R"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="31"/>
-                                        <state key="normal" title="2 Players" backgroundImage="uptapped">
+                                        <state key="normal" title="2 Players" backgroundImage="uptapped1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -769,10 +804,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6U-0e-YTE">
-                                        <rect key="frame" x="0.0" y="145" width="70" height="70"/>
+                                        <rect key="frame" x="0.0" y="141" width="75" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="28"/>
-                                        <state key="normal" title="Easy" backgroundImage="tapped">
+                                        <state key="normal" title="Easy" backgroundImage="tapped1">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -780,10 +815,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxw-ih-NMD">
-                                        <rect key="frame" x="126" y="107" width="70" height="70"/>
+                                        <rect key="frame" x="122" y="104" width="75" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="28"/>
-                                        <state key="normal" title="Hard" backgroundImage="uptapped">
+                                        <state key="normal" title="Hard" backgroundImage="uptapped1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -791,10 +826,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvu-e3-lDS">
-                                        <rect key="frame" x="70" y="148" width="70" height="70"/>
+                                        <rect key="frame" x="68" y="146" width="75" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="28"/>
-                                        <state key="normal" title="Medium" backgroundImage="uptapped">
+                                        <state key="normal" title="Medium" backgroundImage="uptapped1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -860,8 +895,8 @@
         <image name="blue sea sun" width="8192" height="4423"/>
         <image name="galaxy" width="1920" height="1212"/>
         <image name="ombre orange" width="6000" height="4000"/>
-        <image name="tapped" width="594" height="594"/>
-        <image name="uptapped" width="594" height="594"/>
+        <image name="tapped1" width="644" height="644"/>
+        <image name="uptapped1" width="644" height="644"/>
         <image name="white downarrow" width="418" height="418"/>
     </resources>
 </document>
