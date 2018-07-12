@@ -222,6 +222,7 @@ class ThirdViewController: UIViewController {
         let newChip = Chip(center: place, color: color)
         background.addSubview(newChip)
         background.sendSubview(toBack: newChip)
+        background.sendSubview(toBack: boxOutline)
         return newChip
     }
     
