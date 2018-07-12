@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var gameDescription: UILabel!
     @IBOutlet weak var backgroundView: UIView!
     
     @IBOutlet weak var gl1: GridLabel!
@@ -38,6 +39,13 @@ class ViewController: UIViewController {
         gridLabels.append(gl7)
         gridLabels.append(gl8)
         gridLabels.append(gl9)
+    }
+    
+    //=============================================
+    // VIEW WILL APPEAR FUNCTION
+    //=============================================
+    override func viewWillAppear(_ animated: Bool) {
+        gameDescription.text = GameInfo.getGameDescription()
     }
     
     //=============================================

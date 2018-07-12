@@ -10,6 +10,7 @@ import UIKit
 
 class ThirdViewController: UIViewController {
     
+    @IBOutlet weak var gameDescription: UILabel!
     @IBOutlet weak var iButton: UIButton!
     @IBOutlet weak var information: UILabel!
     @IBOutlet var dropLabels: [UIImageView]!
@@ -89,7 +90,6 @@ class ThirdViewController: UIViewController {
     //==================================================
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         board.append([cell1F, cell2F, cell3F, cell4F, cell5F, cell6F, cell7F])
         board.append([cell1E, cell2E, cell3E, cell4E, cell5E, cell6E, cell7E])
         board.append([cell1D, cell2D, cell3D, cell4D, cell5D, cell6D, cell7D])
@@ -108,6 +108,13 @@ class ThirdViewController: UIViewController {
             }
         }
         updatePlayerTurn(isRed: true)
+    }
+    
+    //==================================================
+    // VIEW DID APPEAR FUNCTION
+    //==================================================
+    override func viewWillAppear(_ animated: Bool) {
+        gameDescription.text = GameInfo.getGameDescription()
     }
     
     @IBAction func onTappedi(_ sender: Any) {

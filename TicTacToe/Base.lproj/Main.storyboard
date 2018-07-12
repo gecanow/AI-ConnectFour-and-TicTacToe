@@ -152,6 +152,12 @@
                                     <outletCollection property="gestureRecognizers" destination="PSg-Qn-EBD" appends="YES" id="B8Z-4l-1Q1"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs. Easy Computer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdQ-xn-w1c">
+                                <rect key="frame" x="123" y="112" width="129" height="34"/>
+                                <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
@@ -161,6 +167,8 @@
                             <constraint firstItem="9uT-hn-4bs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MxW-Z3-pRs"/>
                             <constraint firstItem="xbo-SC-cw9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ruv-qq-dCO"/>
                             <constraint firstItem="xbo-SC-cw9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bM0-SR-B67"/>
+                            <constraint firstItem="OdQ-xn-w1c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dR3-ds-D43"/>
+                            <constraint firstItem="OdQ-xn-w1c" firstAttribute="top" secondItem="A4K-eq-4NU" secondAttribute="bottom" id="mXv-LU-IgD"/>
                             <constraint firstItem="9uT-hn-4bs" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="rdf-q7-AtU"/>
                             <constraint firstItem="A4K-eq-4NU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="v10-4J-unL"/>
                             <constraint firstItem="A4K-eq-4NU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xDt-cA-XD2"/>
@@ -168,6 +176,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="xbo-SC-cw9" id="3Dg-fJ-TQ5"/>
+                        <outlet property="gameDescription" destination="OdQ-xn-w1c" id="A85-4B-FKC"/>
                         <outlet property="gl1" destination="pVH-hN-6Qg" id="jwM-T1-Ief"/>
                         <outlet property="gl2" destination="fwe-WH-Tfh" id="2Gu-1e-McI"/>
                         <outlet property="gl3" destination="jF8-Ol-3Tv" id="4Px-Z2-lAN"/>
@@ -210,7 +219,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIr-dm-4Kt">
-                                <rect key="frame" x="169" y="573" width="36" height="44"/>
+                                <rect key="frame" x="169" y="580" width="36" height="44"/>
                                 <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="28"/>
                                 <state key="normal" title="RESET">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -220,10 +229,20 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sO1-pb-XXQ">
-                                <rect key="frame" x="23" y="120" width="328" height="445"/>
+                                <rect key="frame" x="23" y="151" width="328" height="429"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOj-t8-wGu">
+                                        <rect key="frame" x="139" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="rN7-58-6ck"/>
+                                            <constraint firstAttribute="height" constant="50" id="y27-YP-oLc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qeW-ub-wjp">
-                                        <rect key="frame" x="-5" y="151" width="338" height="294"/>
+                                        <rect key="frame" x="-5" y="135" width="338" height="294"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -233,7 +252,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JT2-iw-eEQ" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="157" width="40" height="40"/>
+                                        <rect key="frame" x="-1" y="141" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -249,7 +268,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bs-JA-o4Y" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="48" y="157" width="40" height="40"/>
+                                        <rect key="frame" x="47" y="141" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -257,7 +276,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="og2-op-qmy" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="96" y="157" width="40" height="40"/>
+                                        <rect key="frame" x="95" y="141" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -265,7 +284,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQ6-Jy-dEZ" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="157" width="40" height="40"/>
+                                        <rect key="frame" x="143" y="141" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -273,7 +292,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cud-mr-gnF" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="192" y="157" width="40" height="40"/>
+                                        <rect key="frame" x="191" y="141" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -281,7 +300,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqG-AI-VZq" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="240" y="157" width="40" height="40"/>
+                                        <rect key="frame" x="239" y="141" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -289,7 +308,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTS-jV-69Y" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="288" y="157" width="40" height="40"/>
+                                        <rect key="frame" x="287" y="141" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -297,7 +316,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmi-6E-u30" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="205" width="40" height="40"/>
+                                        <rect key="frame" x="-1" y="189" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -305,7 +324,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCh-oa-rSh" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="48" y="205" width="40" height="40"/>
+                                        <rect key="frame" x="47" y="189" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -313,7 +332,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4W-xr-hOF" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="96" y="205" width="40" height="40"/>
+                                        <rect key="frame" x="95" y="189" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -321,7 +340,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXd-3L-nz9" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="205" width="40" height="40"/>
+                                        <rect key="frame" x="143" y="189" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -329,7 +348,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rv9-9Z-80L" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="192" y="205" width="40" height="40"/>
+                                        <rect key="frame" x="191" y="189" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -337,7 +356,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV4-vC-wt1" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="240" y="205" width="40" height="40"/>
+                                        <rect key="frame" x="239" y="189" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -345,7 +364,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyk-KY-Vrn" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="288" y="205" width="40" height="40"/>
+                                        <rect key="frame" x="287" y="189" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -353,7 +372,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wif-Xi-cGz" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="253" width="40" height="40"/>
+                                        <rect key="frame" x="-1" y="237" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -361,7 +380,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApV-1i-D4e" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="48" y="253" width="40" height="40"/>
+                                        <rect key="frame" x="47" y="237" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -369,7 +388,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVJ-dT-md3" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="96" y="253" width="40" height="40"/>
+                                        <rect key="frame" x="95" y="237" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -377,7 +396,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9y-pM-ATY" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="253" width="40" height="40"/>
+                                        <rect key="frame" x="143" y="237" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -385,7 +404,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsI-VH-8je" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="192" y="253" width="40" height="40"/>
+                                        <rect key="frame" x="191" y="237" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -393,7 +412,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDP-eM-CCD" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="240" y="253" width="40" height="40"/>
+                                        <rect key="frame" x="239" y="237" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -401,7 +420,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3W-ez-U2h" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="288" y="253" width="40" height="40"/>
+                                        <rect key="frame" x="287" y="237" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -409,7 +428,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWU-Qd-TKa" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="301" width="40" height="40"/>
+                                        <rect key="frame" x="-1" y="285" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -417,7 +436,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0a-ju-Dcb" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="48" y="301" width="40" height="40"/>
+                                        <rect key="frame" x="47" y="285" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -425,7 +444,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LU7-C7-aHx" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="96" y="301" width="40" height="40"/>
+                                        <rect key="frame" x="95" y="285" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -433,7 +452,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1a-Pt-xA3" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="301" width="40" height="40"/>
+                                        <rect key="frame" x="143" y="285" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -441,7 +460,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSK-ez-dHf" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="192" y="301" width="40" height="40"/>
+                                        <rect key="frame" x="191" y="285" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -449,7 +468,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niM-og-71q" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="240" y="301" width="40" height="40"/>
+                                        <rect key="frame" x="239" y="285" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -457,7 +476,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSO-fG-vCM" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="288" y="301" width="40" height="40"/>
+                                        <rect key="frame" x="287" y="285" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -465,7 +484,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DX0-FP-S0r" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="349" width="40" height="40"/>
+                                        <rect key="frame" x="-1" y="333" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -473,7 +492,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Lk-7B-tet" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="48" y="349" width="40" height="40"/>
+                                        <rect key="frame" x="47" y="333" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -481,7 +500,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRs-r4-jCT" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="96" y="349" width="40" height="40"/>
+                                        <rect key="frame" x="95" y="333" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -489,7 +508,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmV-Kq-KNP" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="349" width="40" height="40"/>
+                                        <rect key="frame" x="143" y="333" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -497,7 +516,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cub-Wb-C1e" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="192" y="349" width="40" height="40"/>
+                                        <rect key="frame" x="191" y="333" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -505,7 +524,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grr-m2-NdP" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="240" y="349" width="40" height="40"/>
+                                        <rect key="frame" x="239" y="333" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -513,7 +532,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fln-Os-0Ae" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="288" y="349" width="40" height="40"/>
+                                        <rect key="frame" x="287" y="333" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -521,7 +540,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQx-AP-jN7" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="397" width="40" height="40"/>
+                                        <rect key="frame" x="-1" y="381" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -529,7 +548,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnh-Yu-uQx" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="48" y="397" width="40" height="40"/>
+                                        <rect key="frame" x="47" y="381" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -537,7 +556,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VF-Bz-pJi" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="96" y="397" width="40" height="40"/>
+                                        <rect key="frame" x="95" y="381" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -545,7 +564,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dur-LM-2Is" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="397" width="40" height="40"/>
+                                        <rect key="frame" x="143" y="381" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -553,7 +572,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0z-JW-hsF" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="192" y="397" width="40" height="40"/>
+                                        <rect key="frame" x="191" y="381" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -561,7 +580,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faO-Dl-YDG" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="240" y="397" width="40" height="40"/>
+                                        <rect key="frame" x="239" y="381" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -569,49 +588,39 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AY-Na-6CQ" customClass="Cell" customModule="TicTacToe" customModuleProvider="target">
-                                        <rect key="frame" x="288" y="397" width="40" height="40"/>
+                                        <rect key="frame" x="287" y="381" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.28323442980000002" green="0.79463840360000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOj-t8-wGu">
-                                        <rect key="frame" x="139" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="rN7-58-6ck"/>
-                                            <constraint firstAttribute="height" constant="50" id="y27-YP-oLc"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="pwy-mn-Uws">
-                                        <rect key="frame" x="0.0" y="109" width="40" height="40"/>
+                                        <rect key="frame" x="-1" y="93" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="Km5-ce-RMS">
-                                        <rect key="frame" x="48" y="109" width="40" height="40"/>
+                                        <rect key="frame" x="47" y="93" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="I00-aD-rf9">
-                                        <rect key="frame" x="96" y="109" width="40" height="40"/>
+                                        <rect key="frame" x="95" y="93" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="sCj-ck-ylv">
-                                        <rect key="frame" x="144" y="109" width="40" height="40"/>
+                                        <rect key="frame" x="143" y="93" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="e8O-68-jQk">
-                                        <rect key="frame" x="192" y="109" width="40" height="40"/>
+                                        <rect key="frame" x="191" y="93" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="h3T-s3-HMt">
-                                        <rect key="frame" x="240" y="109" width="40" height="40"/>
+                                        <rect key="frame" x="239" y="93" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="voy-Zf-qhM">
-                                        <rect key="frame" x="288" y="109" width="40" height="40"/>
+                                        <rect key="frame" x="287" y="93" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -619,7 +628,7 @@
                                 <constraints>
                                     <constraint firstItem="cOj-t8-wGu" firstAttribute="top" secondItem="sO1-pb-XXQ" secondAttribute="top" id="5gl-E2-kd4"/>
                                     <constraint firstAttribute="width" constant="328" id="KbN-Pb-LT1"/>
-                                    <constraint firstAttribute="height" constant="445" id="Pvm-Yp-Ql9"/>
+                                    <constraint firstAttribute="height" constant="429" id="Pvm-Yp-Ql9"/>
                                     <constraint firstItem="cOj-t8-wGu" firstAttribute="centerX" secondItem="sO1-pb-XXQ" secondAttribute="centerX" id="ydO-TK-6zE"/>
                                 </constraints>
                                 <connections>
@@ -654,10 +663,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs. Easy Computer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdN-6r-6iS">
+                                <rect key="frame" x="123" y="112" width="129" height="34"/>
+                                <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="QIr-dm-4Kt" firstAttribute="top" secondItem="sO1-pb-XXQ" secondAttribute="bottom" constant="8" id="4u1-ST-GHC"/>
+                            <constraint firstItem="hdN-6r-6iS" firstAttribute="centerX" secondItem="s4c-5C-vay" secondAttribute="centerX" id="3eU-bj-inR"/>
+                            <constraint firstItem="QIr-dm-4Kt" firstAttribute="top" secondItem="sO1-pb-XXQ" secondAttribute="bottom" id="4u1-ST-GHC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="biW-cd-etA" secondAttribute="trailing" id="6MG-b1-ByB"/>
+                            <constraint firstItem="sO1-pb-XXQ" firstAttribute="top" secondItem="hdN-6r-6iS" secondAttribute="bottom" constant="5" id="7f9-Pu-gcy"/>
                             <constraint firstItem="XKT-NA-OXb" firstAttribute="leading" secondItem="611-o4-hnM" secondAttribute="trailing" constant="8" id="Ff3-Qn-9NO"/>
                             <constraint firstItem="7uz-oE-fLR" firstAttribute="top" secondItem="nj2-wq-8yD" secondAttribute="bottom" id="IOA-rB-OuW"/>
                             <constraint firstItem="nj2-wq-8yD" firstAttribute="leading" secondItem="s4c-5C-vay" secondAttribute="leading" id="LCl-Jn-lPt"/>
@@ -668,10 +685,10 @@
                             <constraint firstItem="7uz-oE-fLR" firstAttribute="top" secondItem="XKT-NA-OXb" secondAttribute="bottom" constant="8" id="hBl-j7-00p"/>
                             <constraint firstItem="7uz-oE-fLR" firstAttribute="top" secondItem="611-o4-hnM" secondAttribute="bottom" constant="8" id="hrM-Rb-03g"/>
                             <constraint firstItem="611-o4-hnM" firstAttribute="leading" secondItem="s4c-5C-vay" secondAttribute="leadingMargin" id="jfR-SW-qem"/>
-                            <constraint firstItem="sO1-pb-XXQ" firstAttribute="top" secondItem="biW-cd-etA" secondAttribute="bottom" constant="8" id="mSe-aS-lzp"/>
                             <constraint firstItem="QIr-dm-4Kt" firstAttribute="centerX" secondItem="s4c-5C-vay" secondAttribute="centerX" id="phf-0h-r3E"/>
                             <constraint firstItem="sO1-pb-XXQ" firstAttribute="centerX" secondItem="s4c-5C-vay" secondAttribute="centerX" id="rdW-30-84Q"/>
                             <constraint firstItem="biW-cd-etA" firstAttribute="top" secondItem="6FJ-fc-MJa" secondAttribute="bottom" constant="8" id="rpa-bn-Edl"/>
+                            <constraint firstItem="hdN-6r-6iS" firstAttribute="top" secondItem="biW-cd-etA" secondAttribute="bottom" id="uxJ-2F-T5l"/>
                         </constraints>
                     </view>
                     <connections>
@@ -721,6 +738,7 @@
                         <outlet property="cell7F" destination="5AY-Na-6CQ" id="UHz-QY-OkG"/>
                         <outlet property="chipBox" destination="cOj-t8-wGu" id="w8z-Pu-SKk"/>
                         <outlet property="dragField" destination="tgv-pD-hDe" id="BGs-Gg-mgC"/>
+                        <outlet property="gameDescription" destination="hdN-6r-6iS" id="2XV-e3-Rwi"/>
                         <outlet property="iButton" destination="611-o4-hnM" id="Jb3-X0-tpg"/>
                         <outlet property="information" destination="XKT-NA-OXb" id="Quh-Oc-8yc"/>
                         <outletCollection property="dropLabels" destination="pwy-mn-Uws" collectionClass="NSMutableArray" id="w56-Ad-Hgt"/>
