@@ -25,7 +25,7 @@ class Chip: UILabel {
         if colorStr == "r" {
             backgroundColor = .red
         } else {
-            backgroundColor = .black
+            backgroundColor = .blue
         }
     }
 }

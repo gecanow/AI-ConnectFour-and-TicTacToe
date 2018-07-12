@@ -12,7 +12,7 @@ class ThirdViewController: UIViewController {
     
     @IBOutlet var dropLabels: [UIImageView]!
     @IBOutlet weak var background: UIView!
-    
+    @IBOutlet weak var boxOutline: UIView!
     @IBOutlet weak var chipBox: UILabel!
     
     var currentChip : Chip?
@@ -95,10 +95,12 @@ class ThirdViewController: UIViewController {
         board.append([cell1B, cell2B, cell3B, cell4B, cell5B, cell6B, cell7B])
         board.append([cell1A, cell2A, cell3A, cell4A, cell5A, cell6A, cell7A])
         
+        boxOutline.layer.borderColor = UIColor.white.cgColor
         for row in board {
             for cell in row {
                 cell.layer.cornerRadius = 20
                 cell.layer.borderWidth = 5
+                cell.layer.borderColor = UIColor.white.cgColor
                 cell.backgroundColor = .clear
             }
         }
