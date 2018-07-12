@@ -12,6 +12,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet var playerButtons: [UIButton]!
+    @IBOutlet var levelButtons: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,5 +34,36 @@ class MainViewController: UIViewController {
         }) { (void) in
             self.pulseIn()
         }
+    }
+    
+    @IBAction func onTappedPlayerNumber(_ sender: UIButton) {
+        updateUI(onArr: playerButtons, selectedButton: sender)
+        GameInfo.numPlayers = sender.tag
+        
+        for l in levelButtons {
+            if GameInfo.numPlayers == 2 {
+                l.setBackgroundImage(UIImage(named: "uptapped"), for: .normal)
+                l.setTitleColor(.white, for: .normal)
+            } else {
+                updateUI(onArr: levelButtons, selectedButton: levelButtons[GameInfo.levelIndex])
+            }
+        }
+    }
+    
+    @IBAction func onTappedLevel(_ sender: UIButton) {
+        if GameInfo.numPlayers == 1 {
+            updateUI(onArr: levelButtons, selectedButton: sender)
+            GameInfo.levelIndex = sender.tag
+        }
+    }
+    
+    func updateUI(onArr: [UIButton], selectedButton: UIButton) {
+        for button in onArr {
+            button.setBackgroundImage(UIImage(named: "uptapped"), for: .normal)
+            button.setTitleColor(.white, for: .normal)
+        }
+        
+        selectedButton.setBackgroundImage(UIImage(named: "tapped"), for: .normal)
+        selectedButton.setTitleColor(.black, for: .normal)
     }
 }

@@ -12,7 +12,6 @@ class ThirdViewController: UIViewController {
     
     @IBOutlet var dropLabels: [UIImageView]!
     @IBOutlet weak var background: UIView!
-    @IBOutlet weak var comPlayerLevel: UISegmentedControl!
     
     @IBOutlet weak var chipBox: UILabel!
     
@@ -115,7 +114,7 @@ class ThirdViewController: UIViewController {
         
         currentChipIsMovable = false
         
-        if ((comPlayerLevel.selectedSegmentIndex > 0 && redTurn) || comPlayerLevel.selectedSegmentIndex == 0) && currentChip != nil {
+        if ((GameInfo.numPlayers == 2 && redTurn) || GameInfo.numPlayers == 1) && currentChip != nil {
             if (currentChip!.frame.contains(first!)) && (currentChip!.canMove) {
                 currentChipIsMovable = true
             }
@@ -163,7 +162,7 @@ class ThirdViewController: UIViewController {
             let cell = board[checkMe][col]
             if cell.isEmpty {
                 if makeMove && currentChip != nil {
-                    if !redTurn && comPlayerLevel.selectedSegmentIndex > 0 {
+                    if !redTurn && GameInfo.numPlayers == 1 {
                         animateToDrop(dropIndex: col, toCell: cell)
                     } else { animateDownwards(toCell: cell) }
                 
@@ -199,7 +198,7 @@ class ThirdViewController: UIViewController {
                 } else {
                     self.updatePlayerTurn(isRed: !self.redTurn)
                     
-                    if self.comPlayerLevel.selectedSegmentIndex > 0 && !self.redTurn {
+                    if GameInfo.numPlayers == 1 && !self.redTurn {
                         self.comPlayer()
                     }
                 }
@@ -388,9 +387,9 @@ class ThirdViewController: UIViewController {
     // Handle's the computer player's move
     //==================================================
     func comPlayer() {
-        if comPlayerLevel.selectedSegmentIndex > 1 {
+        if GameInfo.levelIndex > 0 {
             // LEVEL ONE/TWO: Based on the board evaluation
-            let nextStepIndex = bestNextMoveFor(color: "b", position: comPlayerLevel.selectedSegmentIndex - 1)[0]
+            let nextStepIndex = bestNextMoveFor(color: "b", position: GameInfo.levelIndex)[0]
             let _ = fallDown(col: nextStepIndex, makeMove: true)
         } else {
             // LEVEL ZERO: pick a random column

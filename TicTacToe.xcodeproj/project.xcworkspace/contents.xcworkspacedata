@@ -4,8 +4,15 @@
    <Group
       location = "group:/Users/necanow/Desktop/Xcode/TicTacToe-master/TicTacToe/fonts"
       name = "fonts">
+   </Group>
+   <Group
+      location = "group:fonts"
+      name = "fonts">
       <FileRef
          location = "group:Montepetrum regular.ttf">
+      </FileRef>
+      <FileRef
+         location = "group:Montepetrum bold.ttf">
       </FileRef>
       <FileRef
          location = "group:Montepetrum Thin.ttf">

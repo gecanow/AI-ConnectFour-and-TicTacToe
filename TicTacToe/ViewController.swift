@@ -8,13 +8,10 @@
 
 import UIKit
 
-let segmentedControlAttribute = [NSFontAttributeName: UIFont(name: "Gurmukhi MN", size: 15)!] // global
-
 class ViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     
-    @IBOutlet weak var computerPlayerLevel: UISegmentedControl!
     @IBOutlet weak var gl1: GridLabel!
     @IBOutlet weak var gl2: GridLabel!
     @IBOutlet weak var gl3: GridLabel!
@@ -41,8 +38,6 @@ class ViewController: UIViewController {
         gridLabels.append(gl7)
         gridLabels.append(gl8)
         gridLabels.append(gl9)
-        
-        computerPlayerLevel.setTitleTextAttributes(segmentedControlAttribute, for: .normal)
     }
     
     //=============================================
@@ -56,7 +51,7 @@ class ViewController: UIViewController {
                 else { myLabel.text = "O" }
                 myLabel.canTap = false
                 
-                if !gameIsOver() && computerPlayerLevel.selectedSegmentIndex > 0 {
+                if !gameIsOver() && GameInfo.numPlayers == 1 {
                     Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.comPlayer), userInfo: nil, repeats: false)
                 } else { xTurn = !xTurn }
             }
@@ -96,9 +91,9 @@ class ViewController: UIViewController {
     }
     
     //=============================================
-    // Restarts the game
+    // Restarts the game ADD BUTTON?
     //=============================================
-    @IBAction func reset(_ sender: Any) {
+    func reset() {
         for label in gridLabels {
             label.text = ""
             label.canTap = true
@@ -147,7 +142,7 @@ class ViewController: UIViewController {
     func presentWinningAlert(_ winner:String) {
         let alert = UIAlertController(title: winner, message: nil,preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Reset", style: .default) {
-            (action) -> Void in self.reset(NSObject())
+            (action) -> Void in self.reset()
         }
         alert.addAction(alertAction)
         present(alert, animated: true, completion: nil)
@@ -160,7 +155,7 @@ class ViewController: UIViewController {
         var comSpot = gridLabels[0]
         
         // Level 2: first look is to win, second look is to block their win, third is to take the center, fourth the best corner
-        if computerPlayerLevel.selectedSegmentIndex >= 2 {
+        if GameInfo.levelIndex >= 1 {
             let tempMyWin = almostWin(check: "O")
             let tempTheirWin = almostWin(check: "X")
             let nextBest = bestCorner(check: "X")
@@ -172,13 +167,13 @@ class ViewController: UIViewController {
                 comSpot = tempTheirWin! // BLOCKS THEIR WIN
             } else if gridLabels[4].canTap {
                 comSpot = gridLabels[4] // TAKES CENTER
-            } else if justCenter(check: "X") && computerPlayerLevel.selectedSegmentIndex == 3 {
+            } else if justCenter(check: "X") && GameInfo.levelIndex == 2 {
                 comSpot = gridLabels[0] // TESTS FOR JUST CENTER
-            } else if justCenterMove2(check: "X") && computerPlayerLevel.selectedSegmentIndex == 3 {
+            } else if justCenterMove2(check: "X") && GameInfo.levelIndex == 2 {
                 comSpot = gridLabels[2] // TESTS FOR CENTER MOVE 2
             } else if nextBest != nil {
                 comSpot = nextBest!     // TAKES A BEST CORNER
-            } else if randEdge != nil && computerPlayerLevel.selectedSegmentIndex == 3 {
+            } else if randEdge != nil && GameInfo.levelIndex == 2 {
                 comSpot = randEdge!     // TAKES AN EDGE
             } else {}
         }
