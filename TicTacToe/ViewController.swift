@@ -8,6 +8,8 @@
 
 import UIKit
 
+let segmentedControlAttribute = [NSFontAttributeName: UIFont(name: "Gurmukhi MN", size: 15)!] // global
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
@@ -39,6 +41,8 @@ class ViewController: UIViewController {
         gridLabels.append(gl7)
         gridLabels.append(gl8)
         gridLabels.append(gl9)
+        
+        computerPlayerLevel.setTitleTextAttributes(segmentedControlAttribute, for: .normal)
     }
     
     //=============================================
@@ -53,7 +57,7 @@ class ViewController: UIViewController {
                 myLabel.canTap = false
                 
                 if !gameIsOver() && computerPlayerLevel.selectedSegmentIndex > 0 {
-                    Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(ViewController.comPlayer), userInfo: nil, repeats: false)
+                    Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.comPlayer), userInfo: nil, repeats: false)
                 } else { xTurn = !xTurn }
             }
         }

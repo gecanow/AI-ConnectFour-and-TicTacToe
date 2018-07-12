@@ -19,6 +19,8 @@
 		8827B74F1D42A244007035BC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8827B74E1D42A244007035BC /* Cell.swift */; };
 		8827B7531D42D69D007035BC /* Chip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8827B7521D42D69D007035BC /* Chip.swift */; };
 		8827B7571D446CFE007035BC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8827B7561D446CFE007035BC /* MainViewController.swift */; };
+		CC389D4420F79E06000CF6F9 /* Montepetrum regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC389D4120F79DFE000CF6F9 /* Montepetrum regular.ttf */; };
+		CC389D4520F79E08000CF6F9 /* Montepetrum Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC389D4220F79DFE000CF6F9 /* Montepetrum Thin.ttf */; };
 		CC5E079020F02FC400B49EAA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E078F20F02FC400B49EAA /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		8827B74E1D42A244007035BC /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		8827B7521D42D69D007035BC /* Chip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chip.swift; path = ../Chip.swift; sourceTree = "<group>"; };
 		8827B7561D446CFE007035BC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CC389D4120F79DFE000CF6F9 /* Montepetrum regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montepetrum regular.ttf"; sourceTree = "<group>"; };
+		CC389D4220F79DFE000CF6F9 /* Montepetrum Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montepetrum Thin.ttf"; sourceTree = "<group>"; };
 		CC5E078F20F02FC400B49EAA /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,7 @@
 				8827B4641D413D9B0045E887 /* Assets.xcassets */,
 				8827B4661D413D9B0045E887 /* LaunchScreen.storyboard */,
 				8827B4691D413D9B0045E887 /* Info.plist */,
+				CC389D4320F79DFE000CF6F9 /* fonts */,
 			);
 			path = TicTacToe;
 			sourceTree = "<group>";
@@ -142,6 +147,16 @@
 			);
 			path = TicTacToeUITests;
 			sourceTree = "<group>";
+		};
+		CC389D4320F79DFE000CF6F9 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CC389D4120F79DFE000CF6F9 /* Montepetrum regular.ttf */,
+				CC389D4220F79DFE000CF6F9 /* Montepetrum Thin.ttf */,
+			);
+			name = fonts;
+			path = "/Users/necanow/Desktop/Xcode/TicTacToe-master/TicTacToe/fonts";
+			sourceTree = "<absolute>";
 		};
 /* End PBXGroup section */
 
@@ -249,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8827B4681D413D9B0045E887 /* LaunchScreen.storyboard in Resources */,
+				CC389D4520F79E08000CF6F9 /* Montepetrum Thin.ttf in Resources */,
+				CC389D4420F79E06000CF6F9 /* Montepetrum regular.ttf in Resources */,
 				8827B4651D413D9B0045E887 /* Assets.xcassets in Resources */,
 				8827B4631D413D9B0045E887 /* Main.storyboard in Resources */,
 			);
