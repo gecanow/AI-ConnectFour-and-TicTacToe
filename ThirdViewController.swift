@@ -143,7 +143,7 @@ class ThirdViewController: UIViewController {
         
         currentChipIsMovable = false
         
-        if ((GameInfo.numPlayers == 2 && redTurn) || GameInfo.numPlayers == 1) && currentChip != nil {
+        if ((GameInfo.numPlayers == 1 && redTurn) || GameInfo.numPlayers == 2) && currentChip != nil {
             if (currentChip!.frame.contains(first!)) && (currentChip!.canMove) {
                 currentChipIsMovable = true
             }
@@ -221,7 +221,7 @@ class ThirdViewController: UIViewController {
                 if rank == 1000000 {
                     self.presentWinAlert("Red Wins!")
                 } else if rank == -1000000 {
-                    self.presentWinAlert("Black Wins!")
+                    self.presentWinAlert("Blue Wins!")
                 } else if self.checkForStalemate() {
                     self.presentWinAlert("Tie")
                 } else {

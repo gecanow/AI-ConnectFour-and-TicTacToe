@@ -171,6 +171,7 @@
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="hvK-PZ-Dsd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="E3U-x9-LT4"/>
                             <constraint firstItem="9uT-hn-4bs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FVL-QM-EWb"/>
                             <constraint firstAttribute="trailing" secondItem="9uT-hn-4bs" secondAttribute="trailing" id="GHl-2z-0IQ"/>
                             <constraint firstItem="hvK-PZ-Dsd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="J0T-Ar-KRS"/>
@@ -223,8 +224,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue sea sun" translatesAutoresizingMaskIntoConstraints="NO" id="nj2-wq-8yD">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect Four" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biW-cd-etA">
-                                <rect key="frame" x="85.5" y="28" width="205" height="78.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4-In-A-Row" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biW-cd-etA">
+                                <rect key="frame" x="98" y="28" width="180" height="78.5"/>
                                 <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -668,12 +669,6 @@
                                     <action selector="onTappedi:" destination="7Gx-en-Oql" eventType="touchUpInside" id="rBv-dP-IzA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag the chip to an arrow and release to drop it into the  board column. The first player to line four chips in a row wins. " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKT-NA-OXb">
-                                <rect key="frame" x="58" y="612" width="317" height="47"/>
-                                <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs. Easy Computer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdN-6r-6iS">
                                 <rect key="frame" x="123" y="106.5" width="129" height="34"/>
                                 <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="30"/>
@@ -690,10 +685,18 @@
                                     <action selector="onTappedBack:" destination="7Gx-en-Oql" eventType="touchUpInside" id="jIh-lo-beO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag the chip to an arrow and release to drop it into the board column. The first player to line four chips in a row wins. " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKT-NA-OXb">
+                                <rect key="frame" x="58" y="612" width="317" height="47"/>
+                                <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="biW-cd-etA" firstAttribute="centerX" secondItem="s4c-5C-vay" secondAttribute="centerX" id="0lI-27-EIQ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HVz-8h-l45" secondAttribute="trailing" constant="20" symbolic="YES" id="3M6-E4-TSV"/>
                             <constraint firstItem="hdN-6r-6iS" firstAttribute="centerX" secondItem="s4c-5C-vay" secondAttribute="centerX" id="3eU-bj-inR"/>
+                            <constraint firstAttribute="trailing" secondItem="XKT-NA-OXb" secondAttribute="trailing" id="4Mc-ix-bEP"/>
                             <constraint firstItem="QIr-dm-4Kt" firstAttribute="top" secondItem="sO1-pb-XXQ" secondAttribute="bottom" id="4u1-ST-GHC"/>
                             <constraint firstItem="sO1-pb-XXQ" firstAttribute="top" secondItem="hdN-6r-6iS" secondAttribute="bottom" constant="5" id="7f9-Pu-gcy"/>
                             <constraint firstItem="XKT-NA-OXb" firstAttribute="leading" secondItem="611-o4-hnM" secondAttribute="trailing" constant="8" id="Ff3-Qn-9NO"/>
@@ -802,7 +805,7 @@
                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe right for Connect Four" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-oy-nJo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe right for  4-In-A-Row" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-oy-nJo">
                                 <rect key="frame" x="187.5" y="553" width="179.5" height="94"/>
                                 <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
