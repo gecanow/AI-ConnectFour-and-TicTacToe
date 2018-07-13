@@ -51,10 +51,11 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func onTappedLevel(_ sender: UIButton) {
-        if GameInfo.numPlayers == 1 {
-            updateUI(onArr: levelButtons, selectedButton: sender)
-            GameInfo.levelIndex = sender.tag
+        if GameInfo.numPlayers == 2 {
+            onTappedPlayerNumber(playerButtons[0])
         }
+        updateUI(onArr: levelButtons, selectedButton: sender)
+        GameInfo.levelIndex = sender.tag
     }
     
     func updateUI(onArr: [UIButton], selectedButton: UIButton) {

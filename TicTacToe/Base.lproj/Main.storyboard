@@ -657,7 +657,7 @@
                                     <action selector="onTappedi:" destination="7Gx-en-Oql" eventType="touchUpInside" id="rBv-dP-IzA"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag the chip to an arrow and release to drop it into the  board column. The first player to line four chips in a row wins. " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKT-NA-OXb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag the chip to an arrow and release to drop it into the  board column. The first player to line four chips in a row wins. " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKT-NA-OXb">
                                 <rect key="frame" x="58" y="612" width="317" height="47"/>
                                 <fontDescription key="fontDescription" name="Montepetrum-Bold" family="Montepetrum" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
