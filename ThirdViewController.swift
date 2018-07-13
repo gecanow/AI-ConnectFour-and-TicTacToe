@@ -139,7 +139,6 @@ class ThirdViewController: UIViewController {
     // and the first touch was on the chip
     //==================================================
     @IBAction func onDragged(_ sender: UIPanGestureRecognizer) {
-        print("dragging")
         let point = dragField.location(in: background)
         
         if ((GameInfo.numPlayers == 1 && redTurn) || GameInfo.numPlayers == 2) && currentChip != nil {

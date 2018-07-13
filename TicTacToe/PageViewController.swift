@@ -77,6 +77,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         return orderedViewControllers[nextIndex]
     }
     
+    //--------------------------------------------------
+    // Walkthough Delegation Function
+    //--------------------------------------------------
     func goToMain(from: Int) {
         let vc =  self.orderedViewControllers[1]
         if from == 0 {
