@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var gl9: GridLabel!
     var gridLabels = [GridLabel]()
     var xTurn = true
+    var delegate : WalkthoughDelegate?
     
     //=============================================
     // VIEW DID LOAD FUNCTION
@@ -46,6 +47,10 @@ class ViewController: UIViewController {
     //=============================================
     override func viewWillAppear(_ animated: Bool) {
         gameDescription.text = GameInfo.getGameDescription()
+    }
+    
+    @IBAction func onTappedBack(_ sender: Any) {
+        delegate?.goToMain(from: 0)
     }
     
     //=============================================

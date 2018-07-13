@@ -22,7 +22,7 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var arrow5: UIImageView!
     @IBOutlet weak var arrow6: UIImageView!
     @IBOutlet weak var arrow7: UIImageView!
-    
+    var delegate : WalkthoughDelegate?
     
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var boxOutline: UIView!
@@ -100,6 +100,7 @@ class ThirdViewController: UIViewController {
     //==================================================
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         board.append([cell1F, cell2F, cell3F, cell4F, cell5F, cell6F, cell7F])
         board.append([cell1E, cell2E, cell3E, cell4E, cell5E, cell6E, cell7E])
         board.append([cell1D, cell2D, cell3D, cell4D, cell5D, cell6D, cell7D])
@@ -275,6 +276,10 @@ class ThirdViewController: UIViewController {
         currentChip?.removeFromSuperview()
         updatePlayerTurn(isRed: true)
         //self.viewDidLoad()
+    }
+    
+    @IBAction func onTappedBack(_ sender: Any) {
+        delegate?.goToMain(from: 2)
     }
 
     // THE FOLLOWING DEALS WITH WINNING

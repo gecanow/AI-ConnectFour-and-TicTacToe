@@ -8,24 +8,17 @@
 
 import UIKit
 
-class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource{
+protocol WalkthoughDelegate {
+    func goToMain(from: Int)
+}
+
+class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource, WalkthoughDelegate {
     
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.addNewVC(viewController: "tttVC"),
                 self.addNewVC(viewController: "mainVC"),
                 self.addNewVC(viewController: "cfVC")]
     }()
-    
-    var dateLabel : UILabel!
-    var settingsToolbar : UIView!
-    var mainButton : UIButton!
-    
-    let shortFriSwitch = UISwitch()
-    let extendedSwitch = UISwitch()
-    
-    var dayList : [UIButton]!
-    var dayListCenters : [CGPoint]!
-    var currentDay : UIButton!
     
     //===============//
     // VIEW DID LOAD //
@@ -39,6 +32,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
                                direction: .forward,
                                animated: true,
                                completion: nil)
+        
+        (orderedViewControllers.last as! ThirdViewController).delegate = self
+        (orderedViewControllers.first as! ViewController).delegate = self
     }
     
     //--------------------------------------------------
@@ -79,6 +75,15 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         guard orderedViewControllersCount > nextIndex else { return nil }
         
         return orderedViewControllers[nextIndex]
+    }
+    
+    func goToMain(from: Int) {
+        let vc =  self.orderedViewControllers[1]
+        if from == 0 {
+            self.setViewControllers([vc], direction: .forward, animated: true, completion: nil)
+        } else {
+            self.setViewControllers([vc], direction: .reverse, animated: true, completion: nil)
+        }
     }
     
 }
