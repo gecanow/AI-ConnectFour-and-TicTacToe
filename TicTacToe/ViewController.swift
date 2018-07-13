@@ -72,23 +72,23 @@ class ViewController: UIViewController {
     // Checks for a winner or a cat's game
     //=============================================
     func checkForWinner() -> Bool {
-        var winner = "Winner: "
+        var winner = ""
         if checkCells(gl1: gridLabels[0], gl2: gridLabels[1], gl3: gridLabels[2]) {
-            winner += gridLabels[0].text!
+            winner = gridLabels[0].text! + " Wins!"
         } else if checkCells(gl1: gridLabels[3], gl2: gridLabels[4], gl3: gridLabels[5]) {
-            winner += gridLabels[3].text!
+            winner = gridLabels[3].text! + " Wins!"
         } else if checkCells(gl1: gridLabels[6], gl2: gridLabels[7], gl3: gridLabels[8]) {
-            winner += gridLabels[6].text!
+            winner = gridLabels[6].text! + " Wins!"
         } else if checkCells(gl1: gridLabels[0], gl2: gridLabels[3], gl3: gridLabels[6]) {
-            winner += gridLabels[0].text!
+            winner = gridLabels[0].text! + " Wins!"
         } else if checkCells(gl1: gridLabels[1], gl2: gridLabels[4], gl3: gridLabels[7]) {
-            winner += gridLabels[1].text!
+            winner = gridLabels[1].text! + " Wins!"
         } else if checkCells(gl1: gridLabels[2], gl2: gridLabels[5], gl3: gridLabels[8]) {
-            winner += gridLabels[2].text!
+            winner = gridLabels[2].text! + " Wins!"
         } else if checkCells(gl1: gridLabels[0], gl2: gridLabels[4], gl3: gridLabels[8]) {
-            winner += gridLabels[0].text!
+            winner = gridLabels[0].text! + " Wins!"
         } else if checkCells(gl1: gridLabels[2], gl2: gridLabels[4], gl3: gridLabels[6]) {
-            winner += gridLabels[2].text!
+            winner = gridLabels[2].text! + " Wins!"
         } else if gameIsOver() {
             winner = "Cat's Game"
         } else {
@@ -199,7 +199,7 @@ class ViewController: UIViewController {
         comSpot.text = "O"
         comSpot.canTap = false
         
-        checkForWinner()
+        let _ = checkForWinner()
     }
     
     //=============================================

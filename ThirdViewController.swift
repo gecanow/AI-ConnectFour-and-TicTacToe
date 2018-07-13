@@ -13,7 +13,17 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var gameDescription: UILabel!
     @IBOutlet weak var iButton: UIButton!
     @IBOutlet weak var information: UILabel!
-    @IBOutlet var dropLabels: [UIImageView]!
+    
+    var dropLabels: [UIImageView]!
+    @IBOutlet weak var arrow1: UIImageView!
+    @IBOutlet weak var arrow2: UIImageView!
+    @IBOutlet weak var arrow3: UIImageView!
+    @IBOutlet weak var arrow4: UIImageView!
+    @IBOutlet weak var arrow5: UIImageView!
+    @IBOutlet weak var arrow6: UIImageView!
+    @IBOutlet weak var arrow7: UIImageView!
+    
+    
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var boxOutline: UIView!
     @IBOutlet weak var chipBox: UILabel!
@@ -96,6 +106,8 @@ class ThirdViewController: UIViewController {
         board.append([cell1C, cell2C, cell3C, cell4C, cell5C, cell6C, cell7C])
         board.append([cell1B, cell2B, cell3B, cell4B, cell5B, cell6B, cell7B])
         board.append([cell1A, cell2A, cell3A, cell4A, cell5A, cell6A, cell7A])
+        
+        dropLabels = [arrow1, arrow2, arrow3, arrow4, arrow5, arrow6, arrow7]
         
         iButton.layer.borderColor = UIColor.white.cgColor
         boxOutline.layer.borderColor = UIColor.white.cgColor
@@ -181,7 +193,7 @@ class ThirdViewController: UIViewController {
                     if !redTurn && GameInfo.numPlayers == 1 {
                         animateToDrop(dropIndex: col, toCell: cell)
                     } else { animateDownwards(toCell: cell) }
-                
+                    
                     currentChip!.canMove = false
                     cell.isEmpty = false
                     cell.chipReference = currentChip
