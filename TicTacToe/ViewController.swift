@@ -100,6 +100,7 @@ class ViewController: UIViewController {
             winner = ""
         }
         if winner != "" {
+            if winner == "X Wins!" && GameInfo.numPlayers == 1 { GameInfo.wonTTT() }
             presentWinningAlert(winner)
             return true
         }
@@ -157,7 +158,7 @@ class ViewController: UIViewController {
     //=============================================
     func presentWinningAlert(_ winner:String) {
         let alert = UIAlertController(title: winner, message: nil,preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Reset", style: .default) {
+        let alertAction = UIAlertAction(title: "Play Again", style: .default) {
             (action) -> Void in self.reset()
         }
         alert.addAction(alertAction)

@@ -233,13 +233,16 @@
 					8827B4591D413D9B0045E887 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = K4Z76LM5AD;
+						LastSwiftMigration = 0940;
 					};
 					8827B46D1D413D9B0045E887 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0940;
 						TestTargetID = 8827B4591D413D9B0045E887;
 					};
 					8827B4781D413D9B0045E887 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0940;
 						TestTargetID = 8827B4591D413D9B0045E887;
 					};
 				};
@@ -478,9 +481,10 @@
 				INFOPLIST_FILE = TicTacToe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gabyecanow.TicTacToe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ecaKnowGames.TicTacToe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -492,9 +496,10 @@
 				INFOPLIST_FILE = TicTacToe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gabyecanow.TicTacToe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ecaKnowGames.TicTacToe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -506,7 +511,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gabyecanow.TicTacToeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicTacToe.app/TicTacToe";
 			};
 			name = Debug;
@@ -519,7 +525,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gabyecanow.TicTacToeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicTacToe.app/TicTacToe";
 			};
 			name = Release;
@@ -531,7 +538,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gabyecanow.TicTacToeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = TicTacToe;
 			};
 			name = Debug;
@@ -543,7 +551,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gabyecanow.TicTacToeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = TicTacToe;
 			};
 			name = Release;

@@ -133,30 +133,20 @@ class ThirdViewController: UIViewController {
     @IBAction func onTappedi(_ sender: Any) {
         information.isHidden = !information.isHidden
     }
-    
-    //==================================================
-    // Tests for when the touch first hits, and 
-    // whether it is on a chip or not
-    //==================================================
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let first = touches.first?.location(in: background)
-        
-        currentChipIsMovable = false
-        
-        if ((GameInfo.numPlayers == 1 && redTurn) || GameInfo.numPlayers == 2) && currentChip != nil {
-            if (currentChip!.frame.contains(first!)) && (currentChip!.canMove) {
-                currentChipIsMovable = true
-            }
-        }
-
-    }
 
     //==================================================
     // Drags the chip if the pan gesture is recognized
     // and the first touch was on the chip
     //==================================================
     @IBAction func onDragged(_ sender: UIPanGestureRecognizer) {
+        print("dragging")
         let point = dragField.location(in: background)
+        
+        if ((GameInfo.numPlayers == 1 && redTurn) || GameInfo.numPlayers == 2) && currentChip != nil {
+            if (currentChip!.canMove) && chipBox.frame.contains(point) {
+                currentChipIsMovable = true
+            }
+        }
         
         if currentChipIsMovable {
             currentChip?.center = CGPoint(x: point.x, y: point.y)
@@ -220,6 +210,7 @@ class ThirdViewController: UIViewController {
                 
                 if rank == 1000000 {
                     self.presentWinAlert("Red Wins!")
+                    if GameInfo.numPlayers == 1 { GameInfo.wonCF() }
                 } else if rank == -1000000 {
                     self.presentWinAlert("Blue Wins!")
                 } else if self.checkForStalemate() {
@@ -275,7 +266,6 @@ class ThirdViewController: UIViewController {
         
         currentChip?.removeFromSuperview()
         updatePlayerTurn(isRed: true)
-        //self.viewDidLoad()
     }
     
     @IBAction func onTappedBack(_ sender: Any) {
@@ -332,10 +322,12 @@ class ThirdViewController: UIViewController {
     //==================================================
     func presentWinAlert(_ winner: String) {
         let alert = UIAlertController(title: winner, message: nil,preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Reset", style: .default) {
+        let alertAction = UIAlertAction(title: "Play Again", style: .default) {
             (action) -> Void in self.reset(self)
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(alertAction)
+        alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
     

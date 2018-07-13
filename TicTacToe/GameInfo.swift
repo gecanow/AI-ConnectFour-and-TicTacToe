@@ -38,10 +38,18 @@ class GameInfo: NSObject {
         }
     }
     
-    static func wonTTT() { wins["TTT"]! += 1 }
-    static func wonCF() { wins["CF"]! += 1 }
+    static func wonTTT() {
+        wins["TTT"]! += 1
+        saveData()
+    }
+    
+    static func wonCF() {
+        wins["CF"]! += 1
+        saveData()
+    }
     
     static func saveData() {
+        print(wins)
         if let encoded = try? JSONEncoder().encode(wins) {
             defaults.set(encoded, forKey: "winInformation")
         }
